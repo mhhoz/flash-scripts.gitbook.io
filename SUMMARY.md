@@ -6,15 +6,18 @@
 * [Discord](https://discord.gg/AhUYns4A9R)
 * [Understanding CFX Auth](understanding-cfx-auth.md)
 
-## Flash Resources
+## Paid Resources
 
-* [Flash Market (TBM) v2](flash-resources/flash-market-tbm-v2/README.md)
-  * [Installation](flash-resources/flash-market-tbm-v2/installation.md)
-  * [Configuration](flash-resources/flash-market-tbm-v2/configuration.md)
-  * [API](flash-resources/flash-market-tbm-v2/api.md)
-* [Flash Pawnshop](flash-resources/flash-pawnshop/README.md)
-  * [Configuration](flash-resources/flash-pawnshop/configuration.md)
-  * [API](flash-resources/flash-pawnshop/api.md)
-* [Flash Online Casino v2](flash-resources/flash-online-casino-v2.md)
-* [Flash Vehicle Market](flash-resources/flash-vehicle-market.md)
-* [Flash Trucking Job](flash-resources/flash-trucking-job.md)
+* [Flash Market (TBM) v2](paid-resources/flash-market-tbm-v2/README.md)
+  * [Installation](paid-resources/flash-market-tbm-v2/installation.md)
+  * [Configuration](paid-resources/flash-market-tbm-v2/configuration.md)
+  * [API](paid-resources/flash-market-tbm-v2/api.md)
+* [Flash Pawnshop](paid-resources/flash-pawnshop/README.md)
+  * [Configuration](paid-resources/flash-pawnshop/configuration.md)
+  * [API](paid-resources/flash-pawnshop/api.md)
+* [Flash Online Casino v2](paid-resources/flash-online-casino-v2.md)
+* [Flash Vehicle Market](paid-resources/flash-vehicle-market.md)
+
+## Free Resources
+
+* [Flash Trucking Job](free-resources/flash-trucking-job.md)
