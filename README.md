@@ -1,20 +1,6 @@
 ---
 cover: .gitbook/assets/Creative Logo flash.png
 coverY: 15.445333333333332
-layout:
-  cover:
-    visible: true
-    size: hero
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
 ---
 
 # Home

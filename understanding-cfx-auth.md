@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
----
-
 # Understanding CFX Auth
 
 ## **Understanding FiveM asset escrow system** <a href="#understanding-fivem-asset-escrow-system" id="understanding-fivem-asset-escrow-system"></a>
