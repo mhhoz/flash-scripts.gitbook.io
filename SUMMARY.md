@@ -13,6 +13,7 @@
   * [Configuration](paid-resources/flash-market-tbm-v2/configuration.md)
 * [Flash Pawnshop](paid-resources/flash-pawnshop/README.md)
   * [Configuration](paid-resources/flash-pawnshop/configuration.md)
+  * [How to Setup](paid-resources/flash-pawnshop/how-to-setup.md)
 * [Flash Online Casino v2](paid-resources/flash-online-casino-v2.md)
 * [Flash Vehicle Market](paid-resources/flash-vehicle-market.md)
 
