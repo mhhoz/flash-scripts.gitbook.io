@@ -1,136 +1,124 @@
 # Pawnshop Configuration Guide
 
-This comprehensive guide will walk you through the configuration options available in the Pawnshop resource, helping you customize the resource to fit your server's needs.
+> This comprehensive guide walks you through the configuration options in the Pawnshop resource, helping you tailor the resource to your server.
 
 ## Locale Configuration
 
-### `Config.Locale`
+- `Config.Locale`
 
 Sets the language for the resource.
-
-* **Options**: `"en"`, `"ar"`, `"de"`, `"es"`, `"fr"`, `"it"`, `"pt"`, `"ch"`
-* **Default**: `"en"`
 
 ```lua
 Config.Locale = "en"
 ```
 
+**Options**: `"en"`, `"ar"`, `"de"`, `"es"`, `"fr"`, `"it"`, `"pt"`, `"ch"`
+**Default**: `"en"`
+
 ## Debug Mode
 
-### `Config.Debug`
+- `Config.Debug`
 
-Enables detailed console logging for troubleshooting.
-
-* **Options**: `true`, `false`
-* **Default**: `false`
+Enables detailed logging for debugging.
 
 ```lua
 Config.Debug = false
 ```
 
+**Options**: `true`, `false`
+**Default**: `false`
+
 ## Framework Configuration
 
-### `Config.Framework`
+- `Config.Framework`
 
-Specifies the framework used on your server.
-
-* **Options**: `"auto"`, `"custom"`, `"esx"`, `"qb"`, `"qbx"`
-* **Default**: `"auto"`
+Specifies the server framework.
 
 ```lua
 Config.Framework = "auto"
 ```
 
-### `Config.esx.useOldExport`
+**Options**: `"auto"`, `"custom"`, `"esx"`, `"qb"`, `"qbx"`
+**Default**: `"auto"`
 
-Compatibility setting for older ESX versions.
+- `Config.esx.useOldExport`
 
-* **Options**: `true`, `false`
-* **Default**: `false`
+For compatibility with older ESX versions.
 
 ```lua
 Config.esx.useOldExport = false
 ```
 
+**Options**: `true`, `false`
+**Default**: `false`
+
 ## Inventory Configuration
 
-### `Config.Inventory`
+- `Config.Inventory`
 
-Specifies the inventory system used on your server.
-
-* **Options**: `"auto"`, `"custom"`, `"ox_inventory"`, `"qs-inventory"`
-* **Default**: `"auto"`
+Specifies the inventory system used.
 
 ```lua
 Config.Inventory = "auto"
 ```
 
-### `Config.ImgURL`
+**Options**: `"auto"`, `"custom"`, `"ox_inventory"`, `"qs-inventory"`
+**Default**: `"auto"`
+
+- `Config.ImgURL`
 
 Base URL for item images.
-
-* **Default Examples**:
-
-  * Ox Inventory: `"nui://ox_inventory/web/images/"`
-  * QS Inventory: `"nui://qs-inventory/html/images/"`
-  * QB Inventory: `"nui://qb-inventory/html/images/"`
 
 ```lua
 Config.ImgURL = "nui://ox_inventory/web/images/"
 ```
 
+**Examples**:
+
+* Ox Inventory: `"nui://ox_inventory/web/images/"`
+* QS Inventory: `"nui://qs-inventory/html/images/"`
+* QB Inventory: `"nui://qb-inventory/html/images/"`
+
 ## Buying Configuration
 
-### `Config.EnableBuying`
+- `Config.EnableBuying`
 
-Enables or disables item purchasing from pawnshops.
-
-* **Options**: `true`, `false`
-* **Default**: `false`
+Enables item purchasing from pawnshops.
 
 ```lua
 Config.EnableBuying = false
 ```
 
-### `Config.BuyPriceMode`
+- `Config.BuyPriceMode`
 
-Determines how buying prices are calculated.
-
-* **Options**: `"same"`, `"markup"`
-* **Default**: `"same"`
+Price calculation method for buying.
 
 ```lua
 Config.BuyPriceMode = "same"
 ```
 
-### `Config.BuyPriceMultiplier`
+**Options**: `"same"`, `"markup"`
+**Default**: `"same"`
 
-Multiplier applied when buying items.
+- `Config.BuyPriceMultiplier`
 
-* **Default**: `1.5`
+Applied when `BuyPriceMode` is `markup`.
 
 ```lua
 Config.BuyPriceMultiplier = 1.5
 ```
 
-### `Config.BuyingAffectsPrices`
+- `Config.BuyingAffectsPrices`
 
-Determines if buying items impacts market prices.
-
-* **Options**: `true`, `false`
-* **Default**: `false`
+Influences market prices when buying items.
 
 ```lua
 Config.BuyingAffectsPrices = false
 ```
 
-### `Config.StoreItemsInStash`
+- `Config.StoreItemsInStash`
 
-Controls whether sold items are stored in the pawnshop stash.
-
-* **Options**: `true`, `false`
-* **Default**: `false`
-* **Effect**: When `true`, buying is restricted to items in the stash.
+Sold items go to stash (affects buying).
 
 ```lua
 Config.StoreItemsInStash = false
@@ -138,22 +126,17 @@ Config.StoreItemsInStash = false
 
 ## Pawnshop Ownership
 
-### `Config.EnablePawnshopOwnership`
+- `Config.EnablePawnshopOwnership`
 
-Allows pawnshops to be purchased and owned.
-
-* **Options**: `true`, `false`
-* **Default**: `false`
+Allows pawnshop ownership by players.
 
 ```lua
 Config.EnablePawnshopOwnership = false
 ```
 
-### `Config.PawnshopOwnershipDuration`
+- `Config.PawnshopOwnershipDuration`
 
-Number of days before ownership expires.
-
-* **Default**: `8`
+Time (in days) before ownership expires.
 
 ```lua
 Config.PawnshopOwnershipDuration = 8
@@ -161,64 +144,49 @@ Config.PawnshopOwnershipDuration = 8
 
 ## Price Configuration
 
-### `Config.FluctuationIncrease`
+- `Config.FluctuationIncrease`
 
-Percentage increase when demand is high.
-
-* **Default**: `10`
+Percent increase on high demand.
 
 ```lua
 Config.FluctuationIncrease = 10
 ```
 
-### `Config.FluctuationDecrease`
+- `Config.FluctuationDecrease`
 
-Percentage decrease when supply is high.
-
-* **Default**: `10`
+Percent decrease on high supply.
 
 ```lua
 Config.FluctuationDecrease = 10
 ```
 
-### `Config.PriceUpdateTime`
+- `Config.PriceUpdateTime`
 
-Interval between automatic price updates (in minutes).
-
-* **Default**: `25`
+Time between price updates (in minutes).
 
 ```lua
 Config.PriceUpdateTime = 25
 ```
 
-### `Config.SeparateShopPrices`
+- `Config.SeparateShopPrices`
 
-Determines if item prices are independent for each shop.
-
-* **Options**: `true`, `false`
-* **Default**: `true`
+If each shop has separate pricing.
 
 ```lua
 Config.SeparateShopPrices = true
 ```
 
-### `Config.AllowSellAnywhere`
+- `Config.AllowSellAnywhere`
 
-Controls where items can be sold.
-
-* **Options**: `true`, `false`
-* **Default**: `false`
+Allows selling items anywhere.
 
 ```lua
 Config.AllowSellAnywhere = false
 ```
 
-### `Config.QualityMultiplier`
+- `Config.QualityMultiplier`
 
-Enables price adjustment based on item quality/durability.
-
-* **Options**: `true`, `false`
-* **Default**: `false`
+Adjust prices based on item quality.
 
 ```lua
 Config.QualityMultiplier = false
@@ -226,109 +194,109 @@ Config.QualityMultiplier = false
 
 ## Interaction Configuration
 
-### `Config.Target`
+- `Config.Target`
 
-Specifies the targeting system.
-
-* **Options**: `"ox"`, `"qb"`, `"TextUI"`
-* **Default**: `"TextUI"`
+Targeting system used for interaction.
 
 ```lua
 Config.Target = "TextUI"
 ```
 
-### `Config.TargetSettings`
+**Options**: `"ox"`, `"qb"`, `"TextUI"`
+**Default**: `"TextUI"`
 
-Customizes interaction settings for different targeting systems.
+- `Config.TargetSettings`
+
+Customize target UI settings.
 
 ```lua
 Config.TargetSettings = {
-    label = "Open Pawnshop",
-    icon = "fa-solid fa-shop",
-    distance = 2.5
+  label = "Open Pawnshop",
+  icon = "fa-solid fa-shop",
+  distance = 2.5
 }
 ```
 
 ## Item Restrictions
 
-### `Config.BlacklistedItems`
+- `Config.BlacklistedItems`
 
-List of items that cannot be sold.
+Disallowed items for selling.
 
 ```lua
 Config.BlacklistedItems = {
-    "money",
-    "cash",
-    "black_money"
+  "money",
+  "cash",
+  "black_money"
 }
 ```
 
 ## Money Types
 
-### `Config.MoneyTypes`
+- `Config.MoneyTypes`
 
-Defines different money types with labels and icons.
+Display labels and icons for money.
 
 ```lua
 Config.MoneyTypes = {
-    money = {label = "Cash", icon = "💵"},
-    black_money = {label = "Dirty Money", icon = "🧪"}
+  money = {label = "Cash", icon = "💵"},
+  black_money = {label = "Dirty Money", icon = "🧪"}
 }
 ```
 
 ## Product Lists
 
-### `Config.ProductLists`
+- `Config.ProductLists`
 
-Predefined lists of items that can be shared between shops.
+Shared item lists between pawnshops.
 
 ```lua
 Config.ProductLists = {
-    jewelry = {
-        { name = "diamond_ring", price = 250 },
-        { name = "gold_chain", price = 200 }
-    },
-    food = {
-        { name = "burger", price = 15 },
-        { name = "water", price = 10 }
-    }
+  jewelry = {
+    { name = "diamond_ring", price = 250 },
+    { name = "gold_chain", price = 200 }
+  },
+  food = {
+    { name = "burger", price = 15 },
+    { name = "water", price = 10 }
+  }
 }
 ```
 
 ## Pawnshop Locations
 
-### `Config.Pawnshops`
+- `Config.Pawnshops`
 
-Defines individual pawnshop locations with detailed configurations.
+Detailed location and settings for each shop.
 
 ```lua
 Config.Pawnshops = {
-    ["downtown"] = {
-        name = "Downtown Pawn",
-        coords = vec3(-123.45, -456.78, 31.12),
-        ped = { model = "s_m_y_dealer_01", heading = 180.0 },
-        blip = { sprite = 617, color = 5, scale = 0.8, label = "Pawnshop" },
-        productList = "jewelry",
-        enableOwnership = true,
-        useStash = true,
-        allowManagement = true
-    }
+  ["downtown"] = {
+    name = "Downtown Pawn",
+    coords = vec3(-123.45, -456.78, 31.12),
+    ped = { model = "s_m_y_dealer_01", heading = 180.0 },
+    blip = { sprite = 617, color = 5, scale = 0.8, label = "Pawnshop" },
+    productList = "jewelry",
+    enableOwnership = true,
+    useStash = true,
+    allowManagement = true
+  }
 }
 ```
 
 ## Notes
 
-* Always test configurations in a development environment.
-* Some settings may require additional framework or inventory system support.
-* Restart your server after making configuration changes.
+> ⚠️ Always test in a development environment first.
+
+* Some options require specific frameworks/inventory.
+* Restart the server after making changes.
 
 ## Customization Tips
 
-* Set `Config.Debug = true` when setting up to get detailed logs.
-* Choose framework/inventory carefully to match your server setup.
-* Adjust price fluctuations to match your in-game economy.
-* Use shared product lists for consistent pricing.
+* Set `Debug = true` during setup.
+* Use `shared product lists` to sync pricing.
+* Match price settings with your economy.
 
 ## Compatibility
 
-* Ensure framework, inventory, and dependencies are up to date and compatible with this resource.
+Ensure all frameworks and inventory dependencies are up to date and supported.
