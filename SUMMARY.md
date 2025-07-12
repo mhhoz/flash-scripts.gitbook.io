@@ -11,7 +11,7 @@
 * [Flash Market (TBM) v2](paid-resources/flash-market-tbm-v2/README.md)
   * [Installation](paid-resources/flash-market-tbm-v2/installation.md)
   * [Configuration](paid-resources/flash-market-tbm-v2/configuration.md)
-* [Flash Pawnshop](paid-resources/flash-pawnshop/README.md)
+* [Flash Pawnshop v2](paid-resources/flash-pawnshop/README.md)
   * [Installation](paid-resources/flash-pawnshop/installation.md)
   * [How to Setup](paid-resources/flash-pawnshop/how-to-setup.md)
   * [Configuration](paid-resources/flash-pawnshop/configuration.md)
