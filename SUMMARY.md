@@ -17,7 +17,6 @@
   * [Configuration](paid-resources/flash-pawnshop/configuration.md)
 * [Flash Online Casino v2](paid-resources/flash-online-casino-v2.md)
 * [Flash Vehicle Market](paid-resources/flash-vehicle-market.md)
+* [Flash Trucking Job](paid-resources/flash-trucking-job.md)
 
 ## Free Resources
-
-* [Flash Trucking Job](free-resources/flash-trucking-job.md)
