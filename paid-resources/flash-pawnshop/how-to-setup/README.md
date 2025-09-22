@@ -2,7 +2,7 @@
 
 This comprehensive guide walks you through the configuration options in the Pawnshop resource, helping you tailor the resource to your server.
 
----
+***
 
 ## Pawnshop Location Setup
 
@@ -67,7 +67,7 @@ Config.Pawnshops = {
 }
 ```
 
----
+***
 
 ## Managing Product Lists
 
@@ -117,7 +117,7 @@ In the pawnshop configuration, use the product list names:
 ProductList = {"jewelry", "electronics"}
 ```
 
----
+***
 
 ## Item Blacklisting
 
@@ -133,7 +133,7 @@ Config.BlacklistedItems = {
 }
 ```
 
----
+***
 
 ## Pricing and Economy
 
@@ -148,7 +148,7 @@ Config.PriceUpdateTime = 25
 Config.SeparateShopPrices = true
 ```
 
----
+***
 
 ## Interaction Settings
 
@@ -169,7 +169,7 @@ Config.TargetSettings = {
 }
 ```
 
----
+***
 
 ## Advanced Configuration
 
@@ -182,25 +182,7 @@ Config.EnablePawnshopOwnership = true
 Config.PawnshopOwnershipDuration = 8
 ```
 
----
-
-## Best Practices
-
-1. Start with a small number of pawnshops
-2. Balance prices carefully
-3. Test thoroughly in a development environment
-4. Use `Config.Debug = true` when setting up
-
----
-
-## Troubleshooting
-
-* Ensure all item names match your inventory system
-* Check that frameworks and inventory systems are compatible
-* Verify coordinates are correct
-* Restart the resource after configuration changes
-
----
+***
 
 ## Example Full Setup
 
