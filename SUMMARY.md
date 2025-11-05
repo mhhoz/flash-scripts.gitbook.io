@@ -19,5 +19,7 @@
 * [Flash Online Casino v2](paid-resources/flash-online-casino-v2.md)
 * [Flash Vehicle Market](paid-resources/flash-vehicle-market.md)
 * [Flash Trucking Job](paid-resources/flash-trucking-job.md)
+* [Flash Gangs](paid-resources/flash-gangs/README.md)
+  * [Exports](paid-resources/flash-gangs/exports.md)
 
 ## Free Resources
