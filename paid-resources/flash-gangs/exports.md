@@ -35,7 +35,9 @@ AddGangStrike(gangName, reason, adminName)
 * `reason` (string): Reason for adding the strike
 * `adminName` (string): Name of the admin adding the strike
 
-Returns: `boolean`     &#x20;
+Returns: `boolean`
+
+**Exmaple:**
 
 ```lua
 local success = exports['flash-gangs']:AddGangStrike('ballas', 'Violation of server rules', 'AdminName')
@@ -44,11 +46,6 @@ if success then
 else
     print('Failed to add strike')
 end
-```
-
-```lua
--- Returns: true or false
--- Activity is logged automatically
 ```
 
 ***
@@ -67,6 +64,9 @@ RemoveGangStrike(gangName, reason, adminName)
 
 Returns: `boolean`
 
+**Exmaple:**
+
+{% code fullWidth="false" %}
 ```lua
 local success = exports['flash-gangs']:RemoveGangStrike('ballas', 'Strike appeal accepted', 'AdminName')
 if success then
@@ -75,11 +75,7 @@ else
     print('Failed to remove strike')
 end
 ```
-
-```lua
--- Returns: true or false
--- Activity is logged automatically
-```
+{% endcode %}
 
 ***
 
@@ -97,6 +93,8 @@ ResetGangStrikes(gangName, reason, adminName)
 
 Returns: `boolean`
 
+**Exmaple:**
+
 ```lua
 local success = exports['flash-gangs']:ResetGangStrikes('ballas', 'Fresh start', 'AdminName')
 if success then
@@ -104,11 +102,6 @@ if success then
 else
     print('Failed to reset strikes')
 end
-```
-
-```lua
--- Returns: true or false
--- Activity is logged automatically
 ```
 
 ***
@@ -124,6 +117,8 @@ GetGangStrikes(gangName)
 * `gangName` (string): The name of the gang
 
 Returns: `number`
+
+**Exmaples:**
 
 ```lua
 local strikes = exports['flash-gangs']:GetGangStrikes('ballas')
@@ -153,6 +148,8 @@ AddPlayerToGang(source, gangName, rank, grade)
 * `grade` (number): Grade/level for the player
 
 Returns: `boolean`
+
+**Exmaple:**
 
 ```lua
 local success = exports['flash-gangs']:AddPlayerToGang(1, 'ballas', 'Member', 1)
@@ -184,6 +181,8 @@ RemovePlayerFromGang(source, gangName)
 
 Returns: `boolean`
 
+**Exmaple:**
+
 ```lua
 local success = exports['flash-gangs']:RemovePlayerFromGang(1, 'ballas')
 if success then
@@ -206,6 +205,8 @@ RemovePlayerFromAllGangs(source)
 * `source` (number): Player server ID
 
 Returns: `boolean`
+
+**Exmaple:**
 
 ```lua
 local success = exports['flash-gangs']:RemovePlayerFromAllGangs(1)
@@ -233,6 +234,8 @@ AddGangXP(gangName, xp)
 
 Returns: `boolean`
 
+**Exmaple:**
+
 ```lua
 local success = exports['flash-gangs']:AddGangXP('ballas', 100)
 ```
@@ -252,12 +255,10 @@ AddMemberXPByIdentifier(identifier, xp)
 
 Returns: `nil`
 
-```lua
-exports['flash-gangs']:AddMemberXPByIdentifier('ABC12345', 50)
-```
+**Exmaple:**
 
 ```lua
--- No return value
+exports['flash-gangs']:AddMemberXPByIdentifier('ABC12345', 50)
 ```
 
 ***
@@ -272,6 +273,8 @@ Gets the rank permissions for a player based on their citizen ID and current gan
 
 Returns: `table` or `nil`
 
+**Exmaple:**
+
 ```lua
 local permissions = exports['flash-gangs']:GetPlayerRankPermissions('ABC12345')
 if permissions then
@@ -279,8 +282,4 @@ if permissions then
 else
     print('Player not found in any gang or no rank permissions')
 end
-```
-
-```lua
--- Returns permissions table or nil
 ```
