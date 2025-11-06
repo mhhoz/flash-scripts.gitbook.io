@@ -27,11 +27,15 @@ This document explains how to use the exported functions from `server/functions.
 
 Adds a strike to a gang.
 
+```lua
+AddGangStrike(gangName, reason, adminName)
+```
+
 * `gangName` (string): The name of the gang
 * `reason` (string): Reason for adding the strike
 * `adminName` (string): Name of the admin adding the strike
 
-Returns: `boolean`
+Returns: `boolean`     &#x20;
 
 ```lua
 local success = exports['flash-gangs']:AddGangStrike('ballas', 'Violation of server rules', 'AdminName')
@@ -52,6 +56,10 @@ end
 ### RemoveGangStrike
 
 Removes a strike from a gang (decreases by 1, minimum 0).
+
+```lua
+RemoveGangStrike(gangName, reason, adminName)
+```
 
 * `gangName` (string): The name of the gang
 * `reason` (string): Reason for removing the strike
@@ -79,6 +87,10 @@ end
 
 Resets all strikes for a gang to 0.
 
+```lua
+ResetGangStrikes(gangName, reason, adminName)
+```
+
 * `gangName` (string): The name of the gang
 * `reason` (string): Reason for resetting strikes
 * `adminName` (string): Name of the admin resetting strikes
@@ -105,6 +117,10 @@ end
 
 Gets the current number of strikes for a gang.
 
+```lua
+GetGangStrikes(gangName)
+```
+
 * `gangName` (string): The name of the gang
 
 Returns: `number`
@@ -126,6 +142,10 @@ local strikes = exports['flash-gangs']:GetGangStrikes('ballas')
 ### AddPlayerToGang
 
 Adds a new player to a gang or updates an existing member's rank and grade. Preserves existing XP and join date.
+
+```lua
+AddPlayerToGang(source, gangName, rank, grade)
+```
 
 * `source` (number): Player server ID
 * `gangName` (string): The name of the gang
@@ -155,6 +175,10 @@ end
 
 Removes a player from a specific gang.
 
+```lua
+RemovePlayerFromGang(source, gangName)
+```
+
 * `source` (number): Player server ID
 * `gangName` (string): The name of the gang
 
@@ -174,6 +198,10 @@ end
 ### RemovePlayerFromAllGangs
 
 Removes a player from all gangs they are a member of.
+
+```lua
+RemovePlayerFromAllGangs(source)
+```
 
 * `source` (number): Player server ID
 
@@ -196,8 +224,12 @@ end
 
 Adds XP to a gang's total XP.
 
+```lua
+AddGangXP(gangName, xp)
+```
+
 * `gangName` (string): The name of the gang
-* `xpAmount` (number): Amount of XP to add (must be > 0)
+* `xp` (number): Amount of XP to add (must be > 0)
 
 Returns: `boolean`
 
@@ -211,8 +243,12 @@ local success = exports['flash-gangs']:AddGangXP('ballas', 100)
 
 Adds XP to a specific member by their citizen ID. Searches all gangs to find the member.
 
-* `citizenid` (string): Player's citizen ID
-* `xpAmount` (number): Amount of XP to add (must be > 0)
+```lua
+AddMemberXPByIdentifier(identifier, xp)
+```
+
+* `identifier`(string): Player's citizen ID
+* `xp` (number): Amount of XP to add (must be > 0)
 
 Returns: `nil`
 

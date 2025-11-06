@@ -143,38 +143,3 @@ All admin commands require the `group.admin` permission level.
 ```
 /resetgangstrikes ballas Fresh start
 ```
-
-***
-
-## Configuration
-
-All commands can be customized in `shared/config.lua`:
-
-```lua
--- Main gangs menu command
-Config.Command = 'gang'
-
--- Admin commands configuration
-Config.AdminCommands = {
-    AddToGang = {
-        command = 'setplayergang',
-        description = 'Add a player to a gang',
-        restricted = 'group.admin'
-    },
-    AddGangStrike = {
-        command = 'addgangstrike',
-        description = 'Add a strike to a gang',
-        restricted = 'group.admin'
-    },
-    RemoveGangStrike = {
-        command = 'removegangstrike',
-        description = 'Remove a strike from a gang',
-        restricted = 'group.admin'
-    },
-    ResetGangStrikes = {
-        command = 'resetgangstrikes',
-        description = 'Reset all strikes for a gang',
-        restricted = 'group.admin'
-    }
-}
-```
