@@ -27,9 +27,9 @@ This document explains how to use the exported functions from `server/functions.
 
 Adds a strike to a gang.
 
-* `gangName` (string): The name of the gang  
-* `reason` (string): Reason for adding the strike  
-* `adminName` (string): Name of the admin adding the strike  
+* `gangName` (string): The name of the gang
+* `reason` (string): Reason for adding the strike
+* `adminName` (string): Name of the admin adding the strike
 
 Returns: `boolean`
 
@@ -53,9 +53,9 @@ end
 
 Removes a strike from a gang (decreases by 1, minimum 0).
 
-* `gangName` (string): The name of the gang  
-* `reason` (string): Reason for removing the strike  
-* `adminName` (string): Name of the admin removing the strike  
+* `gangName` (string): The name of the gang
+* `reason` (string): Reason for removing the strike
+* `adminName` (string): Name of the admin removing the strike
 
 Returns: `boolean`
 
@@ -79,9 +79,9 @@ end
 
 Resets all strikes for a gang to 0.
 
-* `gangName` (string): The name of the gang  
-* `reason` (string): Reason for resetting strikes  
-* `adminName` (string): Name of the admin resetting strikes  
+* `gangName` (string): The name of the gang
+* `reason` (string): Reason for resetting strikes
+* `adminName` (string): Name of the admin resetting strikes
 
 Returns: `boolean`
 
@@ -105,7 +105,7 @@ end
 
 Gets the current number of strikes for a gang.
 
-* `gangName` (string): The name of the gang  
+* `gangName` (string): The name of the gang
 
 Returns: `number`
 
@@ -127,10 +127,10 @@ local strikes = exports['flash-gangs']:GetGangStrikes('ballas')
 
 Adds a new player to a gang or updates an existing member's rank and grade. Preserves existing XP and join date.
 
-* `source` (number): Player server ID  
-* `gangName` (string): The name of the gang  
-* `rank` (string): Rank name for the player  
-* `grade` (number): Grade/level for the player  
+* `source` (number): Player server ID
+* `gangName` (string): The name of the gang
+* `rank` (string): Rank name for the player
+* `grade` (number): Grade/level for the player
 
 Returns: `boolean`
 
@@ -155,8 +155,8 @@ end
 
 Removes a player from a specific gang.
 
-* `source` (number): Player server ID  
-* `gangName` (string): The name of the gang  
+* `source` (number): Player server ID
+* `gangName` (string): The name of the gang
 
 Returns: `boolean`
 
@@ -169,17 +169,13 @@ else
 end
 ```
 
-```lua
--- Returns: true or false
-```
-
 ***
 
 ### RemovePlayerFromAllGangs
 
 Removes a player from all gangs they are a member of.
 
-* `source` (number): Player server ID  
+* `source` (number): Player server ID
 
 Returns: `boolean`
 
@@ -192,10 +188,6 @@ else
 end
 ```
 
-```lua
--- Returns: true or false
-```
-
 ***
 
 ## Experience Points (XP)
@@ -204,17 +196,13 @@ end
 
 Adds XP to a gang's total XP.
 
-* `gangName` (string): The name of the gang  
-* `xpAmount` (number): Amount of XP to add (must be > 0)  
+* `gangName` (string): The name of the gang
+* `xpAmount` (number): Amount of XP to add (must be > 0)
 
 Returns: `boolean`
 
 ```lua
 local success = exports['flash-gangs']:AddGangXP('ballas', 100)
-```
-
-```lua
--- Returns: true or false
 ```
 
 ***
@@ -223,8 +211,8 @@ local success = exports['flash-gangs']:AddGangXP('ballas', 100)
 
 Adds XP to a specific member by their citizen ID. Searches all gangs to find the member.
 
-* `citizenid` (string): Player's citizen ID  
-* `xpAmount` (number): Amount of XP to add (must be > 0)  
+* `citizenid` (string): Player's citizen ID
+* `xpAmount` (number): Amount of XP to add (must be > 0)
 
 Returns: `nil`
 
@@ -244,7 +232,7 @@ exports['flash-gangs']:AddMemberXPByIdentifier('ABC12345', 50)
 
 Gets the rank permissions for a player based on their citizen ID and current gang membership.
 
-* `citizenid` (string): Player's citizen ID  
+* `citizenid` (string): Player's citizen ID
 
 Returns: `table` or `nil`
 

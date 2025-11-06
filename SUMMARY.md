@@ -10,6 +10,7 @@
 
 * [Flash Gangs](paid-resources/flash-gangs/README.md)
   * [Exports](paid-resources/flash-gangs/exports.md)
+  * [Commands](paid-resources/flash-gangs/commands.md)
 * [Flash Market (TBM) v2](paid-resources/flash-market-tbm-v2/README.md)
   * [Installation](paid-resources/flash-market-tbm-v2/installation.md)
   * [Configuration](paid-resources/flash-market-tbm-v2/configuration.md)
