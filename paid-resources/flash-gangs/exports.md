@@ -31,14 +31,19 @@ Adds a strike to a gang.
 * `reason` (string): Reason for adding the strike  
 * `adminName` (string): Name of the admin adding the strike  
 
-Returns: `nil`
+Returns: `boolean`
 
 ```lua
-exports['flash-gangs']:AddGangStrike('ballas', 'Violation of server rules', 'AdminName')
+local success = exports['flash-gangs']:AddGangStrike('ballas', 'Violation of server rules', 'AdminName')
+if success then
+    print('Strike added successfully')
+else
+    print('Failed to add strike')
+end
 ```
 
 ```lua
--- No return value
+-- Returns: true or false
 -- Activity is logged automatically
 ```
 
@@ -52,14 +57,19 @@ Removes a strike from a gang (decreases by 1, minimum 0).
 * `reason` (string): Reason for removing the strike  
 * `adminName` (string): Name of the admin removing the strike  
 
-Returns: `nil`
+Returns: `boolean`
 
 ```lua
-exports['flash-gangs']:RemoveGangStrike('ballas', 'Strike appeal accepted', 'AdminName')
+local success = exports['flash-gangs']:RemoveGangStrike('ballas', 'Strike appeal accepted', 'AdminName')
+if success then
+    print('Strike removed successfully')
+else
+    print('Failed to remove strike')
+end
 ```
 
 ```lua
--- No return value
+-- Returns: true or false
 -- Activity is logged automatically
 ```
 
@@ -73,14 +83,19 @@ Resets all strikes for a gang to 0.
 * `reason` (string): Reason for resetting strikes  
 * `adminName` (string): Name of the admin resetting strikes  
 
-Returns: `nil`
+Returns: `boolean`
 
 ```lua
-exports['flash-gangs']:ResetGangStrikes('ballas', 'Fresh start', 'AdminName')
+local success = exports['flash-gangs']:ResetGangStrikes('ballas', 'Fresh start', 'AdminName')
+if success then
+    print('Strikes reset successfully')
+else
+    print('Failed to reset strikes')
+end
 ```
 
 ```lua
--- No return value
+-- Returns: true or false
 -- Activity is logged automatically
 ```
 
@@ -108,7 +123,7 @@ local strikes = exports['flash-gangs']:GetGangStrikes('ballas')
 
 ## Member Management
 
-### AddOrUpdatePlayerToGang
+### AddPlayerToGang
 
 Adds a new player to a gang or updates an existing member's rank and grade. Preserves existing XP and join date.
 
@@ -120,7 +135,7 @@ Adds a new player to a gang or updates an existing member's rank and grade. Pres
 Returns: `boolean`
 
 ```lua
-local success = exports['flash-gangs']:AddOrUpdatePlayerToGang(1, 'ballas', 'Member', 1)
+local success = exports['flash-gangs']:AddPlayerToGang(1, 'ballas', 'Member', 1)
 if success then
     print('Player added/updated successfully')
 else
@@ -204,7 +219,7 @@ local success = exports['flash-gangs']:AddGangXP('ballas', 100)
 
 ***
 
-### AddMemberXPByCitizenId
+### AddMemberXPByIdentifier
 
 Adds XP to a specific member by their citizen ID. Searches all gangs to find the member.
 
@@ -214,7 +229,7 @@ Adds XP to a specific member by their citizen ID. Searches all gangs to find the
 Returns: `nil`
 
 ```lua
-exports['flash-gangs']:AddMemberXPByCitizenId('ABC12345', 50)
+exports['flash-gangs']:AddMemberXPByIdentifier('ABC12345', 50)
 ```
 
 ```lua
