@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Home](README.md)
+* [About Us](README.md)
 * [Tebex](https://flashscripts.tebex.io/)
 * [Youtube](https://www.youtube.com/@FlaashScripts/featured)
 * [Discord](https://discord.gg/AhUYns4A9R)
@@ -8,6 +8,8 @@
 
 ## Paid Resources
 
+* [Flash Gangs](paid-resources/flash-gangs/README.md)
+  * [Exports](paid-resources/flash-gangs/exports.md)
 * [Flash Market (TBM) v2](paid-resources/flash-market-tbm-v2/README.md)
   * [Installation](paid-resources/flash-market-tbm-v2/installation.md)
   * [Configuration](paid-resources/flash-market-tbm-v2/configuration.md)
@@ -19,7 +21,5 @@
 * [Flash Online Casino v2](paid-resources/flash-online-casino-v2.md)
 * [Flash Vehicle Market](paid-resources/flash-vehicle-market.md)
 * [Flash Trucking Job](paid-resources/flash-trucking-job.md)
-* [Flash Gangs](paid-resources/flash-gangs/README.md)
-  * [Exports](paid-resources/flash-gangs/exports.md)
 
 ## Free Resources
