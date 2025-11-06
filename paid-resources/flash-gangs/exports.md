@@ -17,7 +17,7 @@ layout:
 
 # Exports
 
-This document explains how to use the exported functions from `server/functions.lua`.
+This document explains how to use the exported functions from `server/functions.lua` and client-side exports from `modules/territories/client/functions.lua.lua`.
 
 ***
 
@@ -37,7 +37,7 @@ AddGangStrike(gangName, reason, adminName)
 
 Returns: `boolean`
 
-**Exmaple:**
+**Example:**
 
 ```lua
 local success = exports['flash-gangs']:AddGangStrike('ballas', 'Violation of server rules', 'AdminName')
@@ -64,7 +64,7 @@ RemoveGangStrike(gangName, reason, adminName)
 
 Returns: `boolean`
 
-**Exmaple:**
+**Example:**
 
 {% code fullWidth="false" %}
 ```lua
@@ -93,7 +93,7 @@ ResetGangStrikes(gangName, reason, adminName)
 
 Returns: `boolean`
 
-**Exmaple:**
+**Example:**
 
 ```lua
 local success = exports['flash-gangs']:ResetGangStrikes('ballas', 'Fresh start', 'AdminName')
@@ -118,7 +118,7 @@ GetGangStrikes(gangName)
 
 Returns: `number`
 
-**Exmaples:**
+**Examples:**
 
 ```lua
 local strikes = exports['flash-gangs']:GetGangStrikes('ballas')
@@ -149,7 +149,7 @@ AddPlayerToGang(source, gangName, rank, grade)
 
 Returns: `boolean`
 
-**Exmaple:**
+**Example:**
 
 ```lua
 local success = exports['flash-gangs']:AddPlayerToGang(1, 'ballas', 'Member', 1)
@@ -181,7 +181,7 @@ RemovePlayerFromGang(source, gangName)
 
 Returns: `boolean`
 
-**Exmaple:**
+**Example:**
 
 ```lua
 local success = exports['flash-gangs']:RemovePlayerFromGang(1, 'ballas')
@@ -206,7 +206,7 @@ RemovePlayerFromAllGangs(source)
 
 Returns: `boolean`
 
-**Exmaple:**
+**Example:**
 
 ```lua
 local success = exports['flash-gangs']:RemovePlayerFromAllGangs(1)
@@ -234,7 +234,7 @@ AddGangXP(gangName, xp)
 
 Returns: `boolean`
 
-**Exmaple:**
+**Example:**
 
 ```lua
 local success = exports['flash-gangs']:AddGangXP('ballas', 100)
@@ -255,12 +255,12 @@ Adds XP to a specific member by their citizen ID. Searches all gangs to find the
 AddMemberXPByIdentifier(identifier, xp)
 ```
 
-* `identifier`(string): Player's citizen ID
+* `identifier` (string): Player's citizen ID
 * `xp` (number): Amount of XP to add (must be > 0)
 
 Returns: `boolean`
 
-**Exmaple:**
+**Example:**
 
 ```lua
 local success = exports['flash-gangs']:AddMemberXPByIdentifier('ABC12345', 50)
@@ -279,11 +279,15 @@ end
 
 Gets the rank permissions for a player based on their citizen ID and current gang membership.
 
-* `citizenid` (string): Player's citizen ID
+```lua
+GetPlayerRankPermissions(identifier)
+```
+
+* `identifier` (string): Player's citizen ID
 
 Returns: `table` or `nil`
 
-**Exmaple:**
+**Example:**
 
 ```lua
 local permissions = exports['flash-gangs']:GetPlayerRankPermissions('ABC12345')
@@ -291,5 +295,56 @@ if permissions then
     print('Player has permissions: ' .. json.encode(permissions))
 else
     print('Player not found in any gang or no rank permissions')
+end
+```
+
+***
+
+## Gang Information
+
+### GetGangColor
+
+Gets the color and label for a gang. Returns the gang's custom color and display label, or defaults if not found.
+
+```lua
+GetGangColor(gangName)
+```
+
+* `gangName` (string): The name of the gang
+
+Returns: `string, string` (color, label)
+
+**Example:**
+
+```lua
+local color, label = exports['flash-gangs']:GetGangColor('ballas')
+print('Gang color: ' .. color .. ', Label: ' .. label)
+-- Returns: "#ff0000", "Ballas" (or "#ffffff", "Uncontrolled" if gang not found)
+```
+
+***
+
+## Client Exports
+
+The following exports are available on the **client-side** only.
+
+### GetPlayerCurrentTerritory
+
+Gets the name of the territory the player is currently standing in. Returns `nil` if the player is not inside any territory.
+
+```lua
+GetPlayerCurrentTerritory()
+```
+
+Returns: `string` or `nil`
+
+**Example:**
+
+```lua
+local territory = exports['flash-gangs']:GetPlayerCurrentTerritory()
+if territory then
+    print('Player is in territory: ' .. territory)
+else
+    print('Player is not in any territory')
 end
 ```
