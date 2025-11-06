@@ -178,3 +178,117 @@ RemovePlayerFromAllGangs(source)
 exports['flash-gangs']:RemovePlayerFromAllGangs(1)
 ```
 {% endcode %}
+
+## Experience Points (XP)
+
+## AddGangXP
+
+Adds XP to a gang's total XP.
+
+* `gangName` (string): The name of the gang  
+* `xpAmount` (number): Amount of XP to add (must be > 0)
+
+**Returns:** `boolean` (returns false if invalid parameters, but async so return may not be accessible)
+
+{% code fullWidth="true" %}
+```lua
+AddGangXP(gangName, xpAmount)
+```
+{% endcode %}
+
+{% code overflow="wrap" fullWidth="true" %}
+```lua
+exports['flash-gangs']:AddGangXP('ballas', 100)
+```
+{% endcode %}
+
+**Return Example**
+
+{% code overflow="wrap" fullWidth="true" %}
+```lua
+-- Returns false if gangName is nil, 'none', or xpAmount <= 0
+-- Note: Actual database update is async, return value may not reflect success
+-- Returns: false (on invalid input)
+```
+{% endcode %}
+
+---
+
+## AddMemberXPByCitizenId
+
+Adds XP to a specific member by their citizen ID. Searches all gangs to find the member.
+
+* `citizenid` (string): Player's citizen ID  
+* `xpAmount` (number): Amount of XP to add (must be > 0)
+
+**Returns:** `nil` (async operation)
+
+{% code fullWidth="true" %}
+```lua
+AddMemberXPByCitizenId(citizenid, xpAmount)
+```
+{% endcode %}
+
+{% code overflow="wrap" fullWidth="true" %}
+```lua
+exports['flash-gangs']:AddMemberXPByCitizenId('ABC12345', 50)
+```
+{% endcode %}
+
+**Return Example**
+
+{% code overflow="wrap" fullWidth="true" %}
+```lua
+-- No return value, operation is async
+-- Updates member.xp in the gang they belong to
+```
+{% endcode %}
+
+---
+
+# Permissions
+
+## GetPlayerRankPermissions
+
+Gets the rank permissions for a player based on their citizen ID and current gang membership.
+
+* `citizenid` (string): Player's citizen ID  
+
+**Returns:** `table` or `nil`
+
+{% code fullWidth="true" %}
+```lua
+GetPlayerRankPermissions(citizenid)
+```
+{% endcode %}
+
+{% code overflow="wrap" fullWidth="true" %}
+```lua
+local permissions = exports['flash-gangs']:GetPlayerRankPermissions('ABC12345')
+if permissions then
+    print('Player has permissions: ' .. json.encode(permissions))
+else
+    print('Player not found in any gang or no rank permissions')
+end
+```
+{% endcode %}
+
+**Return Example**
+
+{% code overflow="wrap" fullWidth="true" %}
+```lua
+-- Returns permissions table if player found and has rank
+-- Example: {
+--     ["invite_members"] = true,
+--     ["kick_members"] = true,
+--     ["manage_ranks"] = false,
+--     ...
+-- }
+
+-- Returns nil if:
+-- - Player not found in any gang
+-- - No matching rank found for player's grade
+-- - No gangs exist in database
+```
+{% endcode %}
+
