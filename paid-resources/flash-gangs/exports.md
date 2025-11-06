@@ -238,6 +238,11 @@ Returns: `boolean`
 
 ```lua
 local success = exports['flash-gangs']:AddGangXP('ballas', 100)
+if success then
+    print('XP added successfully')
+else
+    print('Failed to add XP - gang not found or invalid parameters')
+end
 ```
 
 ***
@@ -253,12 +258,17 @@ AddMemberXPByIdentifier(identifier, xp)
 * `identifier`(string): Player's citizen ID
 * `xp` (number): Amount of XP to add (must be > 0)
 
-Returns: `nil`
+Returns: `boolean`
 
 **Exmaple:**
 
 ```lua
-exports['flash-gangs']:AddMemberXPByIdentifier('ABC12345', 50)
+local success = exports['flash-gangs']:AddMemberXPByIdentifier('ABC12345', 50)
+if success then
+    print('XP added successfully')
+else
+    print('Failed to add XP - member not found or invalid parameters')
+end
 ```
 
 ***
