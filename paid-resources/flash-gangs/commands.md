@@ -23,9 +23,9 @@ This document lists all available commands in the Flash Gangs resource.
 
 ## Player Comands
 
-### Gangs Menu
+### Gang Menu
 
-**Command:** `Config.Command` (default: `gangs`)
+**Command:** `Config.Command` (default: `gang`)
 
 **Description:** Opens the gangs menu interface
 
