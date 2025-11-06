@@ -21,7 +21,7 @@ This document lists all available commands in the Flash Gangs resource.
 
 ***
 
-## Player Commands
+## Player Comands
 
 ### Gangs Menu
 
@@ -30,8 +30,9 @@ This document lists all available commands in the Flash Gangs resource.
 **Description:** Opens the gangs menu interface
 
 **Usage:**
+
 ```
-/gangs
+/gang
 ```
 
 **Permissions:** Available to all players
@@ -49,16 +50,19 @@ All admin commands require the `group.admin` permission level.
 **Description:** `Config.AdminCommands.AddToGang.description` (default: "Add a player to a gang - Custom gangs only")
 
 **Usage:**
+
 ```
 /setplayergang [playerId] [gangName] [optional:rank]
 ```
 
 **Parameters:**
+
 * `playerId` (number): Target player's server ID
 * `gangName` (string): Gang name to add the player to
 * `rank` (number, optional): Rank level in the gang (default: 0)
 
 **Example:**
+
 ```
 /setplayergang 1 ballas 3
 ```
@@ -74,15 +78,18 @@ All admin commands require the `group.admin` permission level.
 **Description:** `Config.AdminCommands.AddGangStrike.description` (default: "Add a strike to a gang")
 
 **Usage:**
+
 ```
 /addgangstrike [gangName] [reason]
 ```
 
 **Parameters:**
+
 * `gangName` (string): Gang name to give a strike to
 * `reason` (string, optional): Reason for the strike
 
 **Example:**
+
 ```
 /addgangstrike ballas Violation of server rules
 ```
@@ -96,15 +103,18 @@ All admin commands require the `group.admin` permission level.
 **Description:** `Config.AdminCommands.RemoveGangStrike.description` (default: "Remove a strike from a gang")
 
 **Usage:**
+
 ```
 /removegangstrike [gangName] [reason]
 ```
 
 **Parameters:**
+
 * `gangName` (string): Gang name to remove strike from
 * `reason` (string, optional): Reason for removing the strike
 
 **Example:**
+
 ```
 /removegangstrike ballas Strike appeal accepted
 ```
@@ -118,15 +128,18 @@ All admin commands require the `group.admin` permission level.
 **Description:** `Config.AdminCommands.ResetGangStrikes.description` (default: "Reset all strikes for a gang")
 
 **Usage:**
+
 ```
 /resetgangstrikes [gangName] [reason]
 ```
 
 **Parameters:**
+
 * `gangName` (string): Gang name to reset strikes for
 * `reason` (string, optional): Reason for resetting the strikes
 
 **Example:**
+
 ```
 /resetgangstrikes ballas Fresh start
 ```
@@ -139,7 +152,7 @@ All commands can be customized in `shared/config.lua`:
 
 ```lua
 -- Main gangs menu command
-Config.Command = 'gangs'
+Config.Command = 'gang'
 
 -- Admin commands configuration
 Config.AdminCommands = {
@@ -165,4 +178,3 @@ Config.AdminCommands = {
     }
 }
 ```
-
