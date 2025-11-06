@@ -1,4 +1,5 @@
 ---
+description: The following exports are available on the server-side only.
 layout:
   width: default
   title:
