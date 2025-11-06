@@ -15,11 +15,7 @@ layout:
     visible: false
 ---
 
-# Exports
-
-This document explains how to use the exported functions from `server/functions.lua` and client-side exports from `modules/territories/client/functions.lua.lua`.
-
-***
+# Server
 
 ## Strike Management
 
@@ -320,31 +316,4 @@ Returns: `string, string` (color, label)
 local color, label = exports['flash-gangs']:GetGangColor('ballas')
 print('Gang color: ' .. color .. ', Label: ' .. label)
 -- Returns: "#ff0000", "Ballas" (or "#ffffff", "Uncontrolled" if gang not found)
-```
-
-***
-
-## Client Exports
-
-The following exports are available on the **client-side** only.
-
-### GetPlayerCurrentTerritory
-
-Gets the name of the territory the player is currently standing in. Returns `nil` if the player is not inside any territory.
-
-```lua
-GetPlayerCurrentTerritory()
-```
-
-Returns: `string` or `nil`
-
-**Example:**
-
-```lua
-local territory = exports['flash-gangs']:GetPlayerCurrentTerritory()
-if territory then
-    print('Player is in territory: ' .. territory)
-else
-    print('Player is not in any territory')
-end
 ```

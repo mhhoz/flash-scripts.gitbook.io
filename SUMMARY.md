@@ -9,7 +9,9 @@
 ## Paid Resources
 
 * [Flash Gangs](paid-resources/flash-gangs/README.md)
-  * [Exports](paid-resources/flash-gangs/exports.md)
+  * [Exports](paid-resources/flash-gangs/exports/README.md)
+    * [Client](paid-resources/flash-gangs/exports/client.md)
+    * [Server](paid-resources/flash-gangs/exports/exports.md)
   * [Commands](paid-resources/flash-gangs/commands.md)
 * [Flash Market (TBM) v2](paid-resources/flash-market-tbm-v2/README.md)
   * [Installation](paid-resources/flash-market-tbm-v2/installation.md)
