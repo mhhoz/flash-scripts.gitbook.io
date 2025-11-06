@@ -58,3 +58,114 @@ RemoveGangStrike(gangName, reason, adminName)
 exports['flash-gangs']:RemoveGangStrike('ballas', 'Strike appeal accepted', 'AdminName')
 ```
 {% endcode %}
+
+---
+
+## ResetGangStrikes
+
+Resets all strikes for a gang to 0.
+
+* `gangName` (string): The name of the gang
+* `reason` (string): Reason for resetting strikes
+* `adminName` (string): Name of the admin resetting strikes
+
+{% code fullWidth="true" %}
+```lua
+ResetGangStrikes(gangName, reason, adminName)
+```
+{% endcode %}
+
+{% code overflow="wrap" fullWidth="true" %}
+```lua
+exports['flash-gangs']:ResetGangStrikes('ballas', 'Fresh start', 'AdminName')
+```
+{% endcode %}
+
+---
+
+## GetGangStrikes
+
+Gets the current number of strikes for a gang.
+
+* `gangName` (string): The name of the gang
+* `callback` (function): Callback function that receives the strike count
+
+{% code fullWidth="true" %}
+```lua
+GetGangStrikes(gangName, callback)
+```
+{% endcode %}
+
+{% code overflow="wrap" fullWidth="true" %}
+```lua
+exports['flash-gangs']:GetGangStrikes('ballas', function(strikes)
+    print('Gang has ' .. strikes .. ' strikes')
+end)
+```
+{% endcode %}
+
+---
+
+# Member Management
+
+## AddOrUpdatePlayerToGang
+
+Adds a new player to a gang or updates an existing member's rank and grade. Preserves existing XP and join date.
+
+* `source` (number): Player server ID
+* `gangName` (string): The name of the gang
+* `rank` (string): Rank name for the player
+* `grade` (number): Grade/level for the player
+
+{% code fullWidth="true" %}
+```lua
+AddOrUpdatePlayerToGang(source, gangName, rank, grade)
+```
+{% endcode %}
+
+{% code overflow="wrap" fullWidth="true" %}
+```lua
+exports['flash-gangs']:AddOrUpdatePlayerToGang(1, 'ballas', 'Member', 1)
+```
+{% endcode %}
+
+---
+
+## RemovePlayerFromGang
+
+Removes a player from a specific gang.
+
+* `source` (number): Player server ID
+* `gangName` (string): The name of the gang
+
+{% code fullWidth="true" %}
+```lua
+RemovePlayerFromGang(source, gangName)
+```
+{% endcode %}
+
+{% code overflow="wrap" fullWidth="true" %}
+```lua
+exports['flash-gangs']:RemovePlayerFromGang(1, 'ballas')
+```
+{% endcode %}
+
+---
+
+## RemovePlayerFromAllGangs
+
+Removes a player from all gangs they are a member of.
+
+* `source` (number): Player server ID
+
+{% code fullWidth="true" %}
+```lua
+RemovePlayerFromAllGangs(source)
+```
+{% endcode %}
+
+{% code overflow="wrap" fullWidth="true" %}
+```lua
+exports['flash-gangs']:RemovePlayerFromAllGangs(1)
+```
+{% endcode %}
