@@ -87,20 +87,29 @@ exports['flash-gangs']:ResetGangStrikes('ballas', 'Fresh start', 'AdminName')
 
 Gets the current number of strikes for a gang.
 
-* `gangName` (string): The name of the gang
-* `callback` (function): Callback function that receives the strike count
+* `gangName` (string): The name of the gang  
+
+**Returns:** `number` (strike count, 0 if gang not found or invalid gang name)
 
 {% code fullWidth="true" %}
 ```lua
-GetGangStrikes(gangName, callback)
+GetGangStrikes(gangName)
 ```
 {% endcode %}
 
 {% code overflow="wrap" fullWidth="true" %}
 ```lua
-exports['flash-gangs']:GetGangStrikes('ballas', function(strikes)
-    print('Gang has ' .. strikes .. ' strikes')
-end)
+local strikes = exports['flash-gangs']:GetGangStrikes('ballas')
+print('Gang has ' .. strikes .. ' strikes')
+```
+{% endcode %}
+
+**Return Example**
+
+{% code overflow="wrap" fullWidth="true" %}
+```lua
+local strikes = exports['flash-gangs']:GetGangStrikes('ballas')
+-- Returns: 3 (or 0 if gang not found)
 ```
 {% endcode %}
 
