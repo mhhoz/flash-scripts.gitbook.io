@@ -19,12 +19,52 @@ layout:
 
 ## Gang Information
 
+### GetAllGangs
+
+Retrieves all gangs from the database (excluding the default gang) and returns basic information such as name, image, and motto.
+
+```lua
+GetAllGangs()
+```
+
+Returns: `table`
+
+**Example:**
+
+```lua
+local allGangs = exports['flash-gangs']:GetAllGangs()
+if allGangs then
+    print(json.encode(allGangs, { indent = true }))
+end
+```
+
+```
+-- Returns a table with the following structure:
+{
+    gangs = {
+        {
+            name = "ballas",                                       -- Internal name of the gang
+            image = "https://i.postimg.cc/GmyWYcg6/default-gang-image.png",  -- Gang logo or default image
+            motto = "No motto available"                           -- Gang motto or placeholder text
+        },
+        {
+            name = "vagos",
+            image = "https://i.postimg.cc/GmyWYcg6/default-gang-image.png",
+            motto = "Family First"
+        }
+        -- etc.
+    }
+}
+```
+
+***
+
 ### GetGangData
 
 Gets the data for a specific gang, including color, label, image, motto, and other details. Returns default values if the gang is not found or if the gang name is invalid.
 
 ```lua
-GetGangColor(gangName)
+GetGangData(gangName)
 ```
 
 * `gangName`(string): The name of the gang to retrieve data for.
@@ -53,6 +93,8 @@ end
 }
 ```
 
+***
+
 ### GetGangColor
 
 Gets the color for a gang. Returns the gang's custom color, or default white if not found.
@@ -73,6 +115,8 @@ print('Gang color: ' .. color)
 
 -- Returns: "#ff0000" (or "#ffffff" if gang not found or is default gang)
 ```
+
+***
 
 ## Strike Management
 
