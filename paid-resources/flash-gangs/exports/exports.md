@@ -17,6 +17,63 @@ layout:
 
 # Server
 
+## Gang Information
+
+### GetGangData
+
+Gets the data for a specific gang, including color, label, image, motto, and other details. Returns default values if the gang is not found or if the gang name is invalid.
+
+```lua
+GetGangColor(gangName)
+```
+
+* `gangName`(string): The name of the gang to retrieve data for.
+
+Returns: `table`
+
+**Example:**
+
+```lua
+local gangData = exports['flash-gangs']:GetGangData('ballas')
+if gangData then
+    local decodedData = json.decode(gangData)
+    print(json.encode(decodedData, { indent = true }))
+end
+```
+
+```
+-- Returns a table with the following structure:
+{
+    color = "#2d5590",                      -- Gang's primary color (hex string)
+    label = "Ballas Gang",                  -- Display name of the gang
+    image = "https://example.com/logo.png", -- Gang logo/image URL (or nil)
+    motto = "Street Life",                  -- Gang motto (or nil)
+    secondColor = "#0c0e11",                -- Gang's secondary color (or nil)
+    name = "ballas"                         -- Internal gang name
+}
+```
+
+### GetGangColor
+
+Gets the color for a gang. Returns the gang's custom color, or default white if not found.
+
+```lua
+GetGangColor(gangName)
+```
+
+* `gangName` (string): The name of the gang
+
+Returns: `string` (color)
+
+**Example:**
+
+```lua
+local color, label = exports['flash-gangs']:GetGangColor('ballas')
+print('Gang color: ' .. color)
+
+-- Returns: "#ff0000" (or "#ffffff" if gang not found or is default gang)
+```
+
 ## Strike Management
 
 ### AddGangStrike
@@ -295,25 +352,3 @@ end
 ```
 
 ***
-
-## Gang Information
-
-### GetGangColor
-
-Gets the color and label for a gang. Returns the gang's custom color and display label, or defaults if not found.
-
-```lua
-GetGangColor(gangName)
-```
-
-* `gangName` (string): The name of the gang
-
-Returns: `string, string` (color, label)
-
-**Example:**
-
-```lua
-local color, label = exports['flash-gangs']:GetGangColor('ballas')
-print('Gang color: ' .. color .. ', Label: ' .. label)
--- Returns: "#ff0000", "Ballas" (or "#ffffff", "Uncontrolled" if gang not found)
-```
