@@ -371,6 +371,100 @@ end
 
 ***
 
+## Territories
+
+### GetAllTerritories
+
+Retrieves all gang territories from the database and processes each entry to ensure JSON fields (`capture_progress` and `hustling_gangs`) are decoded properly.\
+Returns an array of territory objects with their current ownership and capture status.
+
+```lua
+GetAllTerritories()
+```
+
+Returns: `table` (array of territory objects)
+
+**Example:**
+
+```lua
+local territories = GetAllTerritories()
+print(json.encode(territories, { indent = true }))
+
+
+-- Returns a table with the following structure:
+{
+    {
+        id = 1,
+        territory_name = "Grove Street",
+        controlled_by = "ballas",  -- or NULL, or JSON string like '{"controlled":"ballas:100","initial":"ballas:100"}'
+        capture_progress = {        -- Decoded from JSON, or empty table {}
+            ["ballas"] = 45,
+            ["vagos"] = 30
+        },
+        capture_status = "stable",  -- or "none", "capturing", "captured" (defaults to "stable" if nil)
+        last_captured_at = "2024-03-20 15:30:00",  -- timestamp or NULL
+        hustling_gangs = {          -- Decoded from JSON, or empty table {}
+            ["ballas"] = 60,
+            ["vagos"] = 40
+        }
+    },
+    {
+        id = 2,
+        territory_name = "Sandy Shores",
+        controlled_by = nil,        -- or NULL if uncontrolled
+        capture_progress = {},      -- Empty table if no capture in progress
+        capture_status = "stable",
+        last_captured_at = nil,
+        hustling_gangs = {}         -- Empty table if no gangs hustling
+    },
+}
+
+```
+
+***
+
+### GetTerritoryInfo
+
+Retrieves detailed information for a specific territory from the database.\
+Decodes JSON fields (`capture_progress` and `hustling_gangs`) into Lua tables and ensures consistent data formatting.
+
+```lua
+GetTerritoryInfo(territoryName)
+```
+
+Returns: `table` (single territory object) or `nil`
+
+```lua
+local territory = GetTerritoryInfo("Grove Street")
+if territory then
+    print(json.encode(territory, { indent = true }))
+else
+    print("Territory not found")
+end
+
+-- Example return value when territory is found:
+{
+    id = 1,
+    territory_name = "Grove Street",
+    controlled_by = "ballas",  -- or NULL, or JSON string like '{"controlled":"ballas:100","initial":"ballas:100"}'
+    capture_progress = {        -- Decoded from JSON, or empty table {}
+        ["ballas"] = 45,
+        ["vagos"] = 30
+    },
+    capture_status = "stable",  -- or "none", "capturing", "captured" (defaults to "stable" if nil)
+    last_captured_at = "2024-03-20 15:30:00",  -- timestamp or NULL
+    hustling_gangs = {          -- Decoded from JSON, or empty table {}
+        ["ballas"] = 60,
+        ["vagos"] = 40
+    }
+}
+
+-- Example return value when territory is NOT found:
+nil
+```
+
+***
+
 ## Permissions
 
 ### GetPlayerRankPermissions
