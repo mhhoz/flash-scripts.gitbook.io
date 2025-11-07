@@ -4,6 +4,8 @@ description: The following exports are available on the client-side only.
 
 # Client
 
+## Territories
+
 ### GetPlayerCurrentTerritory
 
 Gets the name of the territory the player is currently standing in. Returns `nil` if the player is not inside any territory.
