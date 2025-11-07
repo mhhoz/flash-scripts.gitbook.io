@@ -9,6 +9,8 @@
 ## Paid Resources
 
 * [Flash Gangs](paid-resources/flash-gangs/README.md)
+  * [Installation](paid-resources/flash-gangs/installation.md)
+  * [Configuration](paid-resources/flash-gangs/configuration.md)
   * [Exports](paid-resources/flash-gangs/exports/README.md)
     * [Client](paid-resources/flash-gangs/exports/client.md)
     * [Server](paid-resources/flash-gangs/exports/exports.md)
