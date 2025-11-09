@@ -222,8 +222,14 @@ Display labels and icons for money.
 
 ```lua
 Config.MoneyTypes = {
-  money = {label = "Cash", icon = "💵"},
-  black_money = {label = "Dirty Money", icon = "🧪"}
+  money = {
+    label = "Cash", 
+    icon = "fa-dollar-sign"
+  },
+  black_money = {
+    label = "Dirty Money", 
+    icon = "fa-sack-dollar"
+  }
 }
 ```
 
