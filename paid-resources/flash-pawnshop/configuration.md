@@ -131,19 +131,33 @@ Config.PawnshopOwnershipDuration = 8
 Percent increase on high demand.
 
 ```lua
-Config.FluctuationIncrease = 10
+Config.FluctuationIncrease = 15
 ```
 
 Percent decrease on high supply.
 
 ```lua
-Config.FluctuationDecrease = 10
+Config.FluctuationDecrease = 12
 ```
 
 Time between price updates (in minutes).
 
 ```lua
-Config.PriceUpdateTime = 25
+Config.PriceUpdateTime = 1
+```
+
+Advanced price fluctuation settings.
+
+```lua
+Config.PriceFluctuation = {
+    baseFactor = 0.05,              -- Base fluctuation factor (5%)
+    noActivityDivisor = 200,         -- Divisor for no activity price change
+    salesRatioThresholdHigh = 1.2,   -- Threshold for high sales ratio
+    salesRatioThresholdLow = 0.8,    -- Threshold for low sales ratio
+    singleActivityMultiplier = 0.6,  -- Multiplier for single-sided activity
+    minMultiplier = 0.2,             -- Minimum price as % of base price (20%)
+    maxMultiplier = 4.0              -- Maximum price as % of base price (400%)
+}
 ```
 
 If each shop has separate pricing.
