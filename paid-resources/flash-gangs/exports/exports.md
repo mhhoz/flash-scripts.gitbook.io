@@ -258,12 +258,6 @@ else
 end
 ```
 
-```lua
--- Returns: true or false
--- If player is new: adds with xp = 0, join_date = current date
--- If player exists: updates rank/grade, preserves xp and join_date
-```
-
 ***
 
 ### RemovePlayerFromGang
@@ -390,7 +384,6 @@ Returns: `table` (array of territory objects)
 local territories = GetAllTerritories()
 print(json.encode(territories, { indent = true }))
 
-
 -- Returns a table with the following structure:
 {
     {
@@ -458,9 +451,6 @@ end
         ["vagos"] = 40
     }
 }
-
--- Example return value when territory is NOT found:
-nil
 ```
 
 ***
