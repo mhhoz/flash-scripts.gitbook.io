@@ -36,7 +36,7 @@ end
 Gets the player's gang data including name, label, rank, level, and boss status
 
 ```lua
-GetPlayerGang(source)
+GetPlayerGang()
 ```
 
 Returns: `table` or `nil`
@@ -44,7 +44,7 @@ Returns: `table` or `nil`
 **Example:**
 
 ```lua
-local playerGang = exports['flash-gangs']:GetPlayerGang(source)
+local playerGang = exports['flash-gangs']:GetPlayerGang()
 if playerGang then
     print('Gang name: ' .. playerGang.name)
     print('Gang label: ' .. playerGang.label)
