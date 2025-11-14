@@ -230,7 +230,42 @@ local strikes = exports['flash-gangs']:GetGangStrikes('ballas')
 
 ***
 
-## Member Management
+## Member
+
+### GetPlayerGang
+
+Gets the player's gang data including name, label, rank, level, and boss status
+
+```lua
+GetPlayerGang(source)
+```
+
+Returns: `table` or `nil`
+
+**Example:**
+
+```lua
+local playerGang = exports['flash-gangs']:GetPlayerGang(source)
+if playerGang then
+    print('Gang name: ' .. playerGang.name)
+    print('Gang label: ' .. playerGang.label)
+    print('Grade: ' .. playerGang.grade)
+    print('Level: ' .. playerGang.level)
+    print('Is Boss: ' .. tostring(playerGang.isboss))
+else
+    print('Player is not in a gang')
+end
+
+-- {
+--    name = "ballas",        -- Gang internal name
+--    label = "Ballas",       -- Gang display name
+--    grade = "Member",       -- Player's rank name
+--    level = 1,              -- Player's rank level/grade
+--    isboss = false          -- Whether player is a boss
+-- }
+```
+
+***
 
 ### AddPlayerToGang
 
