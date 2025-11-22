@@ -1,6 +1,4 @@
-# Understanding CFX Auth
-
-## **Understanding FiveM asset escrow system** <a href="#understanding-fivem-asset-escrow-system" id="understanding-fivem-asset-escrow-system"></a>
+# FiveM asset escrow errors
 
 The **FiveM asset escrow system** secures assets by encrypting critical files, ensuring that exclusive Quasar Store assets are protected against unauthorized use or modification. Below is a detailed guide to common errors and solutions, with titled sections for clarity.
 
@@ -117,3 +115,4 @@ After installing or updating assets, restart your server to ensure all changes a
 
 {% endstep %}
 {% endstepper %}
+

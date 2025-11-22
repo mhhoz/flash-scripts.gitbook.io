@@ -4,7 +4,7 @@
 * [Tebex](https://flashscripts.tebex.io/)
 * [Youtube](https://www.youtube.com/@FlaashScripts/featured)
 * [Discord](https://discord.gg/AhUYns4A9R)
-* [Understanding CFX Auth](understanding-cfx-auth.md)
+* [FiveM asset escrow errors](understanding-cfx-auth.md)
 
 ## Paid Resources
 

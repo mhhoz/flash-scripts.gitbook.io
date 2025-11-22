@@ -43,7 +43,7 @@ Returns: `table` or `nil`
 
 **Example:**
 
-```lua
+````lua
 local playerGang = exports['flash-gangs']:GetPlayerGang()
 if playerGang then
     print('Gang name: ' .. playerGang.name)
@@ -75,7 +75,7 @@ Gets the current state of drug selling for the local player.
 
 ```lua
 GetDrugSellingState()
-```
+````
 
 Returns: `boolean` - `true` if drug selling is currently active, `false` otherwise.
 
@@ -92,13 +92,16 @@ end
 
 ***
 
-## StartDrugSelling
+## Drug Selling
+
+### StartDrugSelling
 
 Starts the drug selling process for the local player. This function will:
-- Check if the player is in a vehicle or water (returns error if so)
-- Check if drug selling is already active (returns error if so)
-- Verify the player has sellable items configured in `Config.Drugs.Items`
-- Start the selling loop if all checks pass
+
+* Check if the player is in a vehicle or water (returns error if so)
+* Check if drug selling is already active (returns error if so)
+* Verify the player has sellable items configured in `Config.Drugs.Items`
+* Start the selling loop if all checks pass
 
 ```lua
 StartDrugSelling()
@@ -107,14 +110,16 @@ StartDrugSelling()
 Returns: `success (boolean), message (string)`
 
 **Return Values:**
-- `success`: `true` if the check was initiated successfully, `false` if validation failed
-- `message`: Status message describing the result
+
+* `success`: `true` if the check was initiated successfully, `false` if validation failed
+* `message`: Status message describing the result
 
 **Possible Return Messages:**
-- `"Checking for sellable items..."` - Successfully initiated item check
-- `"Cannot start drug selling while in a vehicle"` - Player is in a vehicle
-- `"Cannot start drug selling while in water"` - Player is swimming or in water
-- `"Drug selling is already active"` - Drug selling is already running
+
+* `"Checking for sellable items..."` - Successfully initiated item check
+* `"Cannot start drug selling while in a vehicle"` - Player is in a vehicle
+* `"Cannot start drug selling while in water"` - Player is swimming or in water
+* `"Drug selling is already active"` - Drug selling is already running
 
 **Note:** The function will trigger a server-side check for sellable items. If items are found, the selling loop will start automatically. If no items are found, the player will receive a notification and selling will not start.
 
@@ -147,13 +152,14 @@ end
 
 ***
 
-## StopDrugSelling
+### StopDrugSelling
 
 Stops the drug selling process for the local player. This function will:
-- Check if drug selling is currently active
-- Stop the selling loop
-- Clear player tasks
-- Show a notification to the player
+
+* Check if drug selling is currently active
+* Stop the selling loop
+* Clear player tasks
+* Show a notification to the player
 
 ```lua
 StopDrugSelling()
@@ -162,12 +168,14 @@ StopDrugSelling()
 Returns: `success (boolean), message (string)`
 
 **Return Values:**
-- `success`: `true` if drug selling was stopped, `false` if it wasn't active
-- `message`: Status message describing the result
+
+* `success`: `true` if drug selling was stopped, `false` if it wasn't active
+* `message`: Status message describing the result
 
 **Possible Return Messages:**
-- `"Drug selling disabled"` - Successfully stopped drug selling
-- `"Drug selling is not active"` - Drug selling was not active, nothing to stop
+
+* `"Drug selling disabled"` - Successfully stopped drug selling
+* `"Drug selling is not active"` - Drug selling was not active, nothing to stop
 
 **Example:**
 
@@ -195,7 +203,7 @@ end
 
 ***
 
-## Complete Usage Example
+### Complete Usage Example
 
 Here's a complete example showing how to use all three exports together:
 
@@ -223,6 +231,3 @@ end
 
 ***
 
-```
-
-***
